@@ -65,8 +65,12 @@ int module_run() {
 						recv(fds[i].fd, buffer, message.size, MSG_DONTWAIT);
 
 						module_log("MODULE A", "Received data: %s\r\n", buffer);
-
-					}
+						}
+						break;
+					case MSG_TYPE_QUIT: {
+						return -1;
+						}
+						break;
 				}
 			}
 		}

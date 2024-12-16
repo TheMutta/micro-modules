@@ -46,6 +46,7 @@ int module_run() {
 		message->size = strlen(data);
 		strcpy(message->data, data);
 		send(sockfd, message, size, MSG_DONTWAIT);
+		free(message);
 		data_sent = true;
 	}
 

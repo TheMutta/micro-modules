@@ -45,6 +45,12 @@ int module_run() {
 		strcpy(message->data, data);
 		send(sockfd, message, size, MSG_DONTWAIT);
 		data_sent = true;
+	} else {
+		message_t message;
+		message.type = MSG_TYPE_QUIT;
+		message.size = 0;
+		send(sockfd, &message, sizeof(message_t), MSG_DONTWAIT);
+
 	}
 	return 0;
 }

@@ -6,6 +6,7 @@
 
 typedef enum {
 	MSG_TYPE_PRINT,
+	MSG_TYPE_QUIT,
 } message_type_t;
 
 typedef struct {
